@@ -134,13 +134,13 @@ const printCar = (car: Car) => {
 };
 
 printCar({ brand: "Audi", year: 2023 });
-*/
+
 
 //3. Enums (fixed list of options) 
 
-/*Exercise 1: 
+Exercise 1: 
 Create an enum Color with values: Red, Green, Blue. 
-Write a function showColor that prints "You chose Red/Green/Blue". */
+Write a function showColor that prints "You chose Red/Green/Blue". 
 
 enum Color {
   Red,
@@ -155,10 +155,10 @@ const showColor = (color: Color) => {
 showColor(Color.Red);
 
 
-/*Exercise 2: 
+Exercise 2: 
 Create an enum PizzaSize with values: Small, Medium, Large. 
 Write a function orderPizza that prints: 
-"You ordered a [size] pizza." */
+"You ordered a [size] pizza.
 
 enum PizzaSize {
   Small,
@@ -173,7 +173,7 @@ const orderPizza = (size: PizzaSize) => {
 orderPizza(PizzaSize.Medium);
 
 
-/*Exercise 3: 
+Exercise 3: 
 Create an enum Role with values: Admin, User, Guest. 
 Write a function printRole that checks the role: 
 
@@ -181,7 +181,7 @@ Admin → "You have full access"
 
 User → "You have limited access" 
 
-Guest → "You have guest access" */
+Guest → "You have guest access" 
 
 enum Role {
   Admin,
@@ -201,7 +201,53 @@ const printRole = (role: Role) => {
 
 printRole(Role.Admin);
 printRole(Role.User);
-printRole(Role.Guest);
+printRole(Role.Guest);*/
+
+
+//4. Generics ( <T> means reusable placeholder ) 
+
+/*Exercise 1: 
+Write a generic function wrapInArray<T> that takes one item and returns it inside an array. 
+Example: wrapInArray("cat") → ["cat"] */
+
+const wrapInArray = <T>(item: T): T[] => {
+  return [item];
+};
+
+console.log(wrapInArray("cat"));
+console.log(wrapInArray(10));
+
+
+//Exercise 2: 
+/*Write a generic function firstItem<T> that takes an array and returns the first item. 
+Test with [1, 2, 3] and ["a", "b", "c"].*/
+
+
+
+const firstItem = <T>(items: T): T[] => {
+  return [items];
+};
+
+console.log(firstItem([1, 2, 3]));       
+console.log(firstItem(["a", "b", "c"])); 
+
+
+//Exercise 3: 
+/*Write a generic function swap<T> that takes two items and returns them in reverse order inside an array. 
+Example: swap("hello", "world") → ["world", "hello"] */
+
+
+
+const swap = <T>(a: T, b: T): T[] => {
+  return [b, a];
+};
+
+console.log(swap("hello", "world")); 
+console.log(swap(1, 2));             
+
+
+
+ 
 
 
 
