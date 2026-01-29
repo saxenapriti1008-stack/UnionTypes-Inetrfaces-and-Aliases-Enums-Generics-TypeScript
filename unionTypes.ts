@@ -58,15 +58,15 @@ const printResult = (result: Result) => {
 
 printResult(true);
 printResult(false);
-*/
 
 
-/*2. Interfaces and Type Aliases ( & means AND ) 
+
+//2. Interfaces and Type Aliases ( & means AND ) 
 
 Exercise 1: 
 Create an interface Book with properties title (string) and pages (number). 
 Write a function describeBook that prints: 
-"The book [title] has [pages] pages."*/ 
+"The book [title] has [pages] pages."
 
 
 interface Book {
@@ -82,7 +82,7 @@ const describeBook = (book: Book) => {
 describeBook({ title: "Harry Potter", pages: 500 });
 
 
-/*Exercise 2: 
+Exercise 2: 
 Create two interfaces: 
 
 Teacher with name and subject 
@@ -90,7 +90,7 @@ Teacher with name and subject
 Employee with id and email 
 
 Make a type SchoolTeacher that is both Teacher AND Employee. 
-Write a function printTeacherInfo to show their data. */
+Write a function printTeacherInfo to show their data. 
 
 interface Teacher {
   name: string;
@@ -119,10 +119,10 @@ printTeacherInfo({
 });
 
 
-/*Exercise 3: 
+Exercise 3: 
 Make an interface Car with brand and year. 
 Write a function printCar that prints "Brand: ... Year: ...". 
-Call the function with your favorite car. */
+Call the function with your favorite car. 
 
 interface Car {
   brand: string;
@@ -134,6 +134,77 @@ const printCar = (car: Car) => {
 };
 
 printCar({ brand: "Audi", year: 2023 });
+*/
+
+//3. Enums (fixed list of options) 
+
+/*Exercise 1: 
+Create an enum Color with values: Red, Green, Blue. 
+Write a function showColor that prints "You chose Red/Green/Blue". */
+
+enum Color {
+  Red,
+  Green,
+  Blue
+}
+
+const showColor = (color: Color) => {
+  console.log("You chose " + Color[color]);
+};
+
+showColor(Color.Red);
+
+
+/*Exercise 2: 
+Create an enum PizzaSize with values: Small, Medium, Large. 
+Write a function orderPizza that prints: 
+"You ordered a [size] pizza." */
+
+enum PizzaSize {
+  Small,
+  Medium,
+  Large
+}
+
+const orderPizza = (size: PizzaSize) => {
+  console.log("You ordered a " + PizzaSize[size] + " pizza.");
+};
+
+orderPizza(PizzaSize.Medium);
+
+
+/*Exercise 3: 
+Create an enum Role with values: Admin, User, Guest. 
+Write a function printRole that checks the role: 
+
+Admin → "You have full access" 
+
+User → "You have limited access" 
+
+Guest → "You have guest access" */
+
+enum Role {
+  Admin,
+  User,
+  Guest
+}
+
+const printRole = (role: Role) => {
+  if (role === Role.Admin) {
+    console.log("You have full access");
+  } else if (role === Role.User) {
+    console.log("You have limited access");
+  } else {
+    console.log("You have guest access");
+  }
+};
+
+printRole(Role.Admin);
+printRole(Role.User);
+printRole(Role.Guest);
+
+
+
 
 
 
